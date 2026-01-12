@@ -3,9 +3,13 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A person trying to do better">
-  <title>Harivarshan K A - Designer &amp; Engineer </title>
+    <meta name="description" content="Harivarshan K A - Premium design platform offering graphic design, web development, UI/UX, branding, and product visualization services">
   
+  <!-- Header logo as fallback favicon -->
+
+  <link rel="icon" type="image/png" href="Images/1758047767297.jpg">
+  <link rel="apple-touch-icon" href="Images/1758047767297.jpg">
+  <title>Harivarshan K A - Designer | Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -38,7 +42,7 @@
       border: 2px solid #ffffff;
       border-radius: 50%;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 99999;
       transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
       transform: translate(-50%, -50%);
       background: rgba(255, 255, 255, 0.1);
@@ -55,7 +59,7 @@
       background: #ffffff;
       border-radius: 50%;
       pointer-events: none;
-      z-index: 10000;
+      z-index: 100000;
       transform: translate(-50%, -50%);
       transition: none;
       display: none;
@@ -196,6 +200,11 @@
       50% { transform: translateY(-5px) scale(1.01); }
     }
     
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
     .fade-in-up {
       opacity: 0;
       transform: translateY(50px) scale(0.85);
@@ -270,13 +279,16 @@
     }
     
     .nav-sticky {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 1000;
+      left: 0;
+      right: 0;
+      z-index: 10000;
       background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
       border-bottom: 1px solid #333333;
+      width: 100%;
     }
     
     .mobile-menu {
@@ -288,8 +300,9 @@
       background: rgba(10, 10, 10, 0.98);
       backdrop-filter: blur(10px);
       padding: 1.5rem;
-      z-index: 999;
+      z-index: 9999;
       border-bottom: 1px solid #333333;
+      width: 100%;
     }
     
     .mobile-menu.active {
@@ -313,6 +326,11 @@
     @keyframes slideDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Add body padding to account for fixed navbar */
+    body {
+      padding-top: 60px;
     }
     
     @media (max-width: 768px) {
@@ -532,11 +550,12 @@
     .line-clamp-3 {
       display: -webkit-box;
       -webkit-line-clamp: 3;
+      line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
     
-    a, button, input, textarea, .card-hover, .portfolio-item, .filter-btn {
+   a, button, input, textarea, .card-hover, .portfolio-item, .filter-btn {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
@@ -804,28 +823,28 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="gradient-bg text-white">
-  <div class="w-full"><!-- Custom Cursor -->
+  <div class="w-full" style="position: relative; z-index: 1;"><!-- Custom Cursor -->
    <div class="custom-cursor" id="customCursor"></div>
    <div class="custom-cursor-dot" id="customCursorDot"></div><!-- Navigation -->
-   <nav class="nav-sticky w-full border-b border-gray-800">
+   <nav class="nav-sticky w-full border-b border-gray-800" style="top: 0; left: 0; right: 0; z-index: 10000;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
      <div class="text-lg sm:text-xl md:text-2xl font-bold" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.1em;"><span class="text-gradient">HARIVARSHAN K A</span>
      </div><!-- Desktop Navigation -->
-     <div class="desktop-nav hidden md:flex space-x-8"><a href="#home" class="hover:text-gray-400 transition-colors">Home</a> <a href="#about" class="hover:text-gray-400 transition-colors">About</a> <a href="#services" class="hover:text-gray-400 transition-colors">Background</a> <a href="#experience" class="hover:text-gray-400 transition-colors">Experience</a> <a href="#portfolio" class="hover:text-gray-400 transition-colors">Portfolio</a> <a href="#achievements" class="hover:text-gray-400 transition-colors">Achievements</a> <a href="#contact" class="hover:text-gray-400 transition-colors">Contact</a>
+     <div class="desktop-nav hidden md:flex space-x-8"><a href="#home" class="hover:text-gray-400 transition-colors">Home</a> <a href="#about" class="hover:text-gray-400 transition-colors">About</a> <a href="#services" class="hover:text-gray-400 transition-colors">Background</a> <a href="#experience" class="hover:text-gray-400 transition-colors">Experience</a> <a href="#portfolio" class="hover:text-gray-400 transition-colors">Portfolio</a> <a href="#achievements" class="hover:text-gray-400 transition-colors">Achievements</a> 
+    
      </div><!-- Mobile Menu Button --> <button class="mobile-menu-btn text-white" id="mobileMenuBtn" aria-label="Toggle mobile menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div><!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu"><a href="#home" class="hover:text-gray-400 transition-colors mobile-link">Home</a> <a href="#about" class="hover:text-gray-400 transition-colors mobile-link">About</a> <a href="#services" class="hover:text-gray-400 transition-colors mobile-link">Background</a> <a href="#experience" class="hover:text-gray-400 transition-colors mobile-link">Experience</a> <a href="#portfolio" class="hover:text-gray-400 transition-colors mobile-link">Portfolio</a> <a href="#achievements" class="hover:text-gray-400 transition-colors mobile-link">Achievements</a> <a href="#contact" class="hover:text-gray-400 transition-colors mobile-link">Contact</a>
-    </div>
    </nav>
    
  <!-- Hero Section -->
    <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 relative overflow-hidden" style="position: relative; z-index: 1;">
     <div class="max-w-6xl mx-auto relative z-10">
      <div class="text-center">
-      <h1 id="heroHeadline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-gradient leading-tight fade-in" style="font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;">TRYING TO BE BETTER</h1>
-      <p id="heroSubtext" class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto fade-in px-2" style="font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.8;">Pursuing Green Energy Technology (Post Graduate) with a passion for Graphic Design. Dedicated to creating sustainable solutions and compelling visual experiences.</p>
+      <h1 id="heroHeadline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-gradient leading-tight fade-in" style="font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; min-height: 1.2em;"><span id="typingText"></span><span id="cursor" style="animation: blink 1s infinite;">|</span></h1>
+      <p id="heroSubtext" class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto fade-in px-2" style="font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.8;">Pursuing M.Tech in Green Energy Technology as an SAF Scholar. Passionate about developing sustainable solutions alongside impactful graphic designs.</p>
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center fade-in px-4"><a href="https://www.linkedin.com/in/theharivarshan/" target="_blank" rel="noopener noreferrer" class="accent-gradient text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:shadow-2xl transition-all hover:scale-105"> See My LinkedIn </a> <a href="https://www.behance.net/harivarshan" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-gray-900 transition-all"> Visit Behance </a>
       </div>
      </div>
@@ -838,17 +857,17 @@
      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 text-center fade-in-up" style="font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 0.06em;">ABOUT <span class="text-gradient">ME</span></h2>
      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"><!-- Professional Photo - Larger Size -->
       <div class="flex justify-center fade-in-left">
-       <div class="profile-photo w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] floating-animation"><img src="https://media.licdn.com/dms/image/v2/D5603AQEMd4Rm53__OA/profile-displayphoto-crop_800_800/B56ZlT0AcdIsAI-/0/1758047767297?e=1769040000&v=beta&t=_j5_YxDqfl5WFE7mUcHJcRkWURuWFcFLR14IOG2j384" alt="Harivarshan K A - Designer &amp; Engineer" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> <!-- Elegant fallback with initials -->
-      <div class="w-full h-full bg-gradient-to-br from-gray-700 via-gray-800 to-black flex items-center justify-center" style="display: none;"><span style="font-family: 'Orbitron', sans-serif; font-size: 6rem; font-weight: 900; letter-spacing: 0.1em; color: #ffffff;">HK</span>
+       <div class="profile-photo w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] floating-animation"><img src="Images/1758047767297.jpg" alt="Harivarshan K A - Designer &amp; Engineer" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> <!-- Elegant fallback with initials -->
+        <div class="w-full h-full bg-gradient-to-br from-gray-700 via-gray-800 to-black flex items-center justify-center" style="display: none;"><span style="font-family: 'Orbitron', sans-serif; font-size: 6rem; font-weight: 900; letter-spacing: 0.1em; color: #ffffff;">HK</span>
         </div>
        </div>
       </div><!-- About Text and Sliding Banner -->
       <div><!-- Sliding Tech Text Banner -->
        <div class="overflow-hidden mb-6 sm:mb-8 bg-white bg-opacity-10 py-2 sm:py-3 rounded-lg border border-gray-700 fade-in-right">
-        <div class="sliding-text"><span style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; sm:font-size: 0.75rem; md:font-size: 0.85rem; letter-spacing: 0.1em; font-weight: 600;">CIVIL ENGINEERING • GREEN ENERGY • SUSTAINABLE DESIGN • RENEWABLE TECH • INFRASTRUCTURE • CREATIVE SOLUTIONS • INNOVATION • </span>
+        <div class="sliding-text"><span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; font-weight: 600;">CIVIL ENGINEERING • GREEN ENERGY • SUSTAINABLE DESIGN • RENEWABLE TECH • INFRASTRUCTURE • CREATIVE SOLUTIONS • INNOVATION • </span>
         </div>
        </div>
-       <p id="aboutText" class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed fade-in-right italic text-justify" style="font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.8; animation-delay: 0.2s;">I'm Harivarshan K A, currently pursuing M.Tech in Green Energy Technology at Pondicherry University after earning my B.Tech in Civil Engineering with a CGPA of 8.06 from Puducherry Technological University. I've combined my interest in sustainable engineering and creative design over the past few years. On the engineering side, I completed internships with Puducherry Smart City Development Limited, Puducherry Public Works Department, and Chennai Metro Rail Limited, gaining practical experience in urban infrastructure, water systems, and project planning. I'm also the founder of harrywhite, a design firm dedicated to making high-quality, exceptional design accessible to everyone, and a founding member of UNITY Foundation, which focuses on empowering youth and building stronger communities. I enjoy working on ideas that bring together technology, design, and sustainability to make a positive impact.</p>
+       <p id="aboutText" class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed fade-in-right italic text-justify" style="font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.8; animation-delay: 0.2s;">I'm Harivarshan K A, currently pursuing M.Tech in Green Energy Technology as an SAF Scholar at Pondicherry University after earning my B.Tech in Civil Engineering with a CGPA of 8.06 from Puducherry Technological University. I've combined my interest in sustainable engineering and creative design over the past few years. On the engineering side, I completed internships with Puducherry Smart City Development Limited, Puducherry Public Works Department, and Chennai Metro Rail Limited, gaining practical experience in urban infrastructure, water systems, and project planning. I'm also the founder of harrywhite, a design firm dedicated to making high-quality, exceptional design accessible to everyone, and a founding member of UNITY Foundation, which focuses on empowering youth and building stronger communities. I enjoy working on ideas that bring together technology, design, and sustainability to make a positive impact.</p>
       </div>
      </div>
     </div>
@@ -862,15 +881,9 @@
         <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
         </svg>
        </div>
-       <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">DESIGN</h3>
+       <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">GRAPHIC DESIGN</h3>
        <p class="text-sm sm:text-base text-gray-300 mb-4" style="font-family: 'Inter', sans-serif; line-height: 1.7;">Creative design solutions spanning graphics, branding, and digital media for impactful visual communication.</p>
-       <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm md:text-base" style="font-family: 'Inter', sans-serif;">
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Architectural Design</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Brand Identity</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Digital Design</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Visual Communication</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Creative Strategy</span></li>
-       </ul>
+     
       </div><!-- Card 2: Civil Engineering -->
       <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-gray-700 card-hover scale-in elementPulse text-center" style="animation-delay: 0.2s;">
        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-white to-gray-400 rounded-lg flex items-center justify-center">
@@ -878,14 +891,8 @@
         </svg>
        </div>
        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">CIVIL ENGINEERING</h3>
-       <p class="text-sm sm:text-base text-gray-300 mb-4" style="font-family: 'Inter', sans-serif; line-height: 1.7;">Structural design, infrastructure development, and construction management for sustainable built environments.</p>
-       <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm md:text-base" style="font-family: 'Inter', sans-serif;">
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Structural Analysis &amp; Design</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Infrastructure Planning</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Construction Management</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Site Development</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Quality Assurance</span></li>
-       </ul>
+       <p class="text-sm sm:text-base text-gray-300 mb-4" style="font-family: 'Inter', sans-serif; line-height: 1.7;">Structural design, and construction management for sustainable built environments.</p>
+     
       </div><!-- Card 3: Green Energy -->
       <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-gray-700 card-hover scale-in elementPulse text-center" style="animation-delay: 0.4s;">
        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-white to-gray-400 rounded-lg flex items-center justify-center">
@@ -893,14 +900,8 @@
         </svg>
        </div>
        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">GREEN ENERGY</h3>
-       <p class="text-sm sm:text-base text-gray-300 mb-4" style="font-family: 'Inter', sans-serif; line-height: 1.7;">Renewable energy solutions and sustainable technology implementation for eco-friendly power systems.</p>
-       <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm md:text-base" style="font-family: 'Inter', sans-serif;">
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Solar Energy Systems</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Wind Power Solutions</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Energy Efficiency Analysis</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Sustainable Technology</span></li>
-        <li class="flex items-start"><span class="text-white mr-2">•</span> <span>Carbon Footprint Reduction</span></li>
-       </ul>
+       <p class="text-sm sm:text-base text-gray-300 mb-4" style="font-family: 'Inter', sans-serif; line-height: 1.7;">Learning renewable energy solutions and sustainable technology implementation for eco-friendly power systems.</p>
+    
       </div>
      </div>
     </div>
@@ -917,7 +918,7 @@
         <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
          <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">Proprietor - harrywhite</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">Jun 2024 - Present</span>
         </div>
-        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Design Firm | Puducherry, India</p>
+        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">harrywhite | Puducherry, India</p>
         <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Founded a design firm dedicated to making high-quality, exceptional design accessible to everyone. Specializing in digital marketing, typography, banner design, social media advertising, video editing, graphic design, logo design, brochures, poster design, and branding.</p>
        </div>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse mb-6">
@@ -927,13 +928,32 @@
         <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">UNITY Foundation | Puducherry, India</p>
         <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Igniting tomorrow's leaders, promoting unity, and nurturing patriotism. Managing digital marketing, event planning, web development, content creation, and organizational leadership.</p>
        </div>
-       <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse">
+
+              <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse mb-6">
         <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">Civil Engineering Internships</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">2020 - 2023</span>
+         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">Graphic Design Intern</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">June 2023 - July 2023</span>
         </div>
-        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Multiple Organizations | Puducherry &amp; Chennai</p>
+        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Techy Geeks | Puducherry, India</p>
+        <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Designed impactful digital creatives and marketing assets for TechyGeeks, blending branding, typography, and visual storytelling.
+</p>
+       </div>
+              <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse mb-6">
+        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">Civil Engineering Internships</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">2 Weeks Each</span>
+        </div>
+        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">CMRL - Chennai | PSCDL & PWD - Puducherry</p>
         <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Completed internships with Puducherry Smart City Development Limited, Puducherry Public Works Department, and Chennai Metro Rail Limited. Gained hands-on experience in urban infrastructure and project planning.</p>
        </div>
+
+       <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse">
+        <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">Freelance Graphic Designer</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">Feb 2022 - Present</span>
+        </div>
+        <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Remote | Anywhere</p>
+        <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Creative designer with experience in graphic design, logo creation, poster design, and visual storytelling across digital platforms.
+Combines branding, editing, and presentation skills to deliver impactful and engaging content.</p>
+       </div>
+       
       </div><!-- Education Column -->
       <div>
        <h3 class="text-2xl sm:text-3xl font-bold mb-8 flex items-center gap-3" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;">
@@ -941,14 +961,14 @@
         </svg> EDUCATION</h3>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse mb-6">
         <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">M.Tech in Green Energy Technology</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">Currently Pursuing</span>
+         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">M.Tech in Green Energy Technology</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">2025-2027 | Currently Pursuing</span>
         </div>
         <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Pondicherry University</p>
         <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Advanced studies in renewable energy systems, solar and wind power technologies, sustainable energy solutions, and environmental engineering practices.</p>
        </div>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl card-hover border border-gray-700 fade-in elementPulse mb-6">
         <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">B.Tech in Civil Engineering</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">CGPA: 8.06</span>
+         <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">B.Tech in Civil Engineering</h4><span class="text-gray-400 text-xs sm:text-sm" style="font-family: 'JetBrains Mono', monospace;">2021-2025 | CGPA: 8.06</span>
         </div>
         <p class="text-gray-400 mb-3 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 600;">Puducherry Technological University</p>
         <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif;">Comprehensive education in structural engineering, construction management, infrastructure design, and sustainable building practices.</p>
@@ -957,76 +977,134 @@
         <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
         </svg> COURSES COMPLETED</h3>
        <div class="space-y-4">
+
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Advanced Graphic Design</p>
-         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">Adobe Creative Suite Certification - Complete mastery of Photoshop, Illustrator, InDesign</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">The Fundamentals Of Digital Marketing</p>
+         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">Google Digital Unlocked</p>
+        </div>
+ 
+        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Introduction to Personal Branding</p>
+         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">University Of Virginia | COURSERA</p>
         </div>
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">UI/UX Design Fundamentals</p>
-         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">User experience design principles, wireframing, prototyping, and user testing methodologies</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Introduction to Philosophy</p>
+         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">University Of Edinburgh | COURSERA</p>
         </div>
-        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Renewable Energy Systems</p>
-         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">Solar and wind power technologies, energy storage, and sustainable grid integration</p>
+          <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">New Models of Business in Society</p>
+         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">University Of Virginia | COURSERA</p>
         </div>
+
+       
+
+               <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">HTML Fundamentals Course</p>
+         <p class="text-gray-400 text-xs sm:text-sm" style="font-family: 'Inter', sans-serif;">SOLOLEARN</p>
+        </div>
+
+      
+
+    
        </div>
       </div>
-     </div><!-- Three New Sections: Workshops, Conferences -->
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 mt-16"><!-- Workshops Column -->
-      <div>
-       <h3 class="text-2xl sm:text-3xl font-bold mb-8 flex items-center gap-3" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;">
+     </div>
+     
+     
+     <!-- Workshops and Conferences Section -->
+     <div class="px-4 mt-16">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-8 flex items-center justify-center gap-3" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;">
         <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
-        </svg> WORKSHOPS ATTENDED</h3>
+        </svg> WORKSHOPS AND CONFERENCES PARTICIPATED</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Workshops Column -->
+      <div>
        <div class="space-y-4">
+
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Design Thinking &amp; Innovation</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Stanford Design School Methodology - Human-centered design approach</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">2023</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">5 Day Online FDP on Sustainable Technologies For Waste Valorization, Energy Recovery, & Material Characterization</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Centre For Waste Management, Sathyabama Institue Of Science & Technology</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">5th - 9th January, 2026</p>
         </div>
+
+                <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">CODE-ASSEMBLE-RIDE: EV 2-Wheeler Building Workshop</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">SHAASTRA 2026, IIT Madras</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">3rd January, 2026</p>
+        </div>
+
+                       <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">AI In Marketing</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">SHAASTRA 2026, IIT Madras</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">2nd January, 2026</p>
+        </div>
+
+
+      <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">5 Day Boot-Camp & Hands-on Training on "Computational & Practical Aspects in Drone Technology Towards Sustainability"</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Green Energy Technology, Pondicherry University & Department Of Mechanical Engineering, NIT Rourkela</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">03rd - 7th November, 2025</p>
+        </div>
+
+
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Brand Strategy &amp; Identity</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Building cohesive brand systems and visual identity frameworks</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">2023</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Academic Entrepreneurship Development in Hydrogen Electrolyzers</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Green Energy Technology, Pondicherry University</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">31st October, 2025</p>
         </div>
-        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Sustainable Architecture</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Green building practices and eco-friendly construction techniques</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">2022</p>
+
+            <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">International Conference On Energy & Water For Sustainable Environment - ICEWSE 2025</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Green Energy Technology, Pondicherry University</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">30th September - 1st October, 2025</p>
         </div>
-        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Green Building Technologies</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Energy-efficient systems and renewable materials integration</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">2022</p>
-        </div>
+
+  
        </div>
       </div><!-- Conferences Column -->
       <div>
-       <h3 class="text-2xl sm:text-3xl font-bold mb-8 flex items-center gap-3" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;">
-        <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-        </svg> CONFERENCES PARTICIPATED</h3>
        <div class="space-y-4">
+
+                    <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Role Of Additive Manufacturing Application Towards Sustainability</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Green Energy Technology, Pondicherry University</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">08th August, 2025</p>
+        </div>
+
+                    <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">National Workshop On Advances in Nuclear Energy For Sustainable Environment - NWANESE 2025</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Green Energy Technology, Pondicherry University</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">25th July, 2025</p>
+        </div>
+
+
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">National Design Summit</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Latest trends in graphic design, branding, and digital experiences</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">New Delhi, 2024</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">2 Day Workshop on Leadership, Politics, and Governance</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Indoi Samuday Foundation</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">12th - 13th July, 2025</p>
+        </div>
+
+   <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Technical Seminar on Coastal & Offshore Structures</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Department Of Civil Engineering, Puducherry Technological University</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">08th May, 2025</p>
+        </div>
+
+
+        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Garnishing Talent Program</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Confederation Of Indiann Industry & EATON</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">August - November, 2024</p>
         </div>
         <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Renewable Energy Conference</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Advances in solar, wind, and sustainable energy technologies</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">Bangalore, 2024</p>
+         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Amazon Web Services (AWS)</p>
+         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">GYANITH 2023, NIT Karaikal</p>
+         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">01st March, 2023</p>
         </div>
-        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Smart Cities Forum</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Urban infrastructure planning and sustainable city development</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">Chennai, 2023</p>
-        </div>
-        <div class="bg-black bg-opacity-80 p-5 sm:p-6 rounded-2xl border border-gray-700 fade-in elementPulse">
-         <p class="text-base sm:text-lg font-semibold mb-2" style="font-family: 'Space Grotesk', sans-serif;">Youth Leadership Summit</p>
-         <p class="text-gray-400 text-xs sm:text-sm mb-2" style="font-family: 'Inter', sans-serif;">Community engagement, youth empowerment, and social impact</p>
-         <p class="text-gray-500 text-xs" style="font-family: 'JetBrains Mono', monospace;">Puducherry, 2023</p>
-        </div>
+
+
        </div>
       </div>
+     </div>
      </div>
     </div>
    </section>
@@ -1036,34 +1114,22 @@
     <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">TECHNICAL SKILLS</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Adobe Photoshop</p>
+      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Canva</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Illustrator</p>
-     </div>
-     <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">InDesign</p>
-     </div>
-     <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">After Effects</p>
+      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">AutoCAD</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
       <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Figma</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Sketch</p>
+      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Inkscape</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Webflow</p>
+      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Affinity Designer</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Procreate</p>
-     </div>
-     <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Canva</p>
-     </div>
-     <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
-      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Prototyping</p>
+      <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">SketchUP</p>
      </div>
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
       <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Typography</p>
@@ -1071,6 +1137,7 @@
      <div class="bg-black bg-opacity-80 p-3 sm:p-4 rounded-lg border border-gray-700 text-center fade-in elementPulse skill-item">
       <p class="font-semibold text-xs sm:text-sm md:text-base" style="font-family: 'Space Grotesk', sans-serif;">Branding</p>
      </div>
+     
     </div>
    </div>
   </section><!-- Portfolio Section -->
@@ -1183,11 +1250,11 @@
         <div class="text-6xl mb-4">
          ◈
         </div>
-        <h3 class="text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">PACKAGING DESIGN</h3>
+        <h3 class="text-2xl font-bold" style="font-family: 'Space Grotesk', sans-serif;">PRESENTATION</h3>
        </div>
       </div>
       <div class="portfolio-overlay">
-       <h3 class="text-3xl font-bold mb-2 text-black" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">PACKAGING DESIGN</h3>
+       <h3 class="text-3xl font-bold mb-2 text-black" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;">PRESENTATION</h3>
        <p class="text-base text-black" style="font-family: 'Inter', sans-serif; font-weight: 600;">Product Packaging &amp; Labels</p>
       </div>
      </div><!-- Portfolio Item 9 -->
@@ -1211,78 +1278,85 @@
   <section id="achievements" class="py-20 px-6 bg-gray-900 bg-opacity-50">
    <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-16 text-center fade-in-up px-4" style="font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 0.08em;">ACHIEVEMENTS &amp; <span class="text-gradient">HONOURS</span></h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-16 px-4">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-16 px-4">
      <div class="text-center fade-in elementPulse">
-      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; sm:font-size: 3rem; md:font-size: 4rem;">
-       150+
-      </div>
+      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">200+</div>
       <p class="text-base sm:text-lg md:text-xl text-gray-300" style="font-family: 'Inter', sans-serif; font-weight: 400;">Design Projects</p>
      </div>
      <div class="text-center fade-in elementPulse">
-      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; sm:font-size: 3rem; md:font-size: 4rem;">
-       75+
-      </div>
+      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">75+</div>
       <p class="text-base sm:text-lg md:text-xl text-gray-300" style="font-family: 'Inter', sans-serif; font-weight: 400;">Happy Clients</p>
      </div>
      <div class="text-center fade-in elementPulse">
-      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; sm:font-size: 3rem; md:font-size: 4rem;">
-       5+
-      </div>
+      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">5+</div>
       <p class="text-base sm:text-lg md:text-xl text-gray-300" style="font-family: 'Inter', sans-serif; font-weight: 400;">Years Experience</p>
      </div>
-    </div><!-- Slideshow Container -->
+      <div class="text-center fade-in elementPulse">
+      <div class="stat-number mb-4" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">99%</div>
+      <p class="text-base sm:text-lg md:text-xl text-gray-300" style="font-family: 'Inter', sans-serif; font-weight: 400;">Client Satisfaction</p>
+     </div>
+    </div>
+    
+    <!-- Slideshow Container -->
     <div class="slideshow-container fade-in px-4" style="position: relative;"><button class="slideshow-nav prev" id="prevSlide" aria-label="Previous slide">‹</button> <button class="slideshow-nav next" id="nextSlide" aria-label="Next slide">›</button>
-     <div class="slideshow-track" id="slideshowTrack"><!-- Slide 1 -->
+     <div class="slideshow-track" id="slideshowTrack">
+      
+      <!-- Slide 1 -->
       <div class="slideshow-slide">
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+1" alt="Achievement 1" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/Canva 1000 Design Milestone Badge.jpg" alt="Achievement 1" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Design Excellence Award</h4>
-          <p class="text-sm text-gray-300">Recognition for outstanding design work</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Design Milestone Badge</h4>
+          <p class="text-sm text-gray-300">Recognition for 1000 design work</p>
          </div>
         </div>
        </div>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+2" alt="Achievement 2" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/IMG_6299.JPG" alt="Achievement 2" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Innovation Award</h4>
-          <p class="text-sm text-gray-300">Awarded for innovative design solutions</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">JIGYASA 2025 - Secretary, Department Of Civil Engineering</h4>
+          <p class="text-sm text-gray-300">Launch of Department Magazine EDIFICE'25</p>
          </div>
         </div>
        </div>
-      </div><!-- Slide 2 -->
+      </div>
+      
+      <!-- Slide 2 -->
       <div class="slideshow-slide">
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+3" alt="Achievement 3" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/DSC_0654.jpg" alt="Achievement 3" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Best Brand Identity</h4>
-          <p class="text-sm text-gray-300">Top recognition in branding category</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">1st Place in STARTUP SPARK, JIGYASA 2025</h4>
+          <p class="text-sm text-gray-300">Secured 1st Place in STARTUP SPARK</p>
          </div>
         </div>
        </div>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+4" alt="Achievement 4" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/IMG_20230505_154925.jpg" alt="Achievement 4" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Youth Leadership</h4>
-          <p class="text-sm text-gray-300">Recognition for community leadership</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">1st Place in POSTER DESIGNING, Design Club</h4>
+          <p class="text-sm text-gray-300">Secured 1st Place in POSTER DESIGNING</p>
          </div>
         </div>
        </div>
-      </div><!-- Slide 3 -->
+       
+      </div>
+      
+  <!-- Slide 3 -->
       <div class="slideshow-slide">
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+5" alt="Achievement 5" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/3rd.jpeg" alt="Achievement 5" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Creative Excellence</h4>
-          <p class="text-sm text-gray-300">Award for creative design execution</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Logo contest for National Level Technical Symposium JIGYASA 2025</h4>
+          <p class="text-sm text-gray-300">Secured 3rd Place in JIGYASA 2025 Logo Competetion</p>
          </div>
         </div>
        </div>
        <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 elementPulse">
-        <div class="achievement-image-card mb-4"><img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Achievement+6" alt="Achievement 6" onerror="this.style.display='none';">
+        <div class="achievement-image-card mb-4"><img src="Images/gcc.jpeg" alt="Achievement 6" onerror="this.style.display='none';">
          <div class="achievement-image-caption">
-          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Sustainable Design</h4>
-          <p class="text-sm text-gray-300">Recognition for eco-friendly design</p>
+          <h4 class="font-bold text-lg mb-1" style="font-family: 'Space Grotesk', sans-serif;">Gender Champion 2024-2025</h4>
+          <p class="text-sm text-gray-300">Selected as Gender Champion in accordance with the guidelines of MHRD and actively organized events, awareness programs for the academic year 2024-2025.</p>
          </div>
         </div>
        </div>
@@ -1309,97 +1383,17 @@
      </div>
      <div class="bg-black bg-opacity-80 p-6 sm:p-8 rounded-2xl border border-gray-700 fade-in">
       <h3 class="text-xl sm:text-2xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;">◉ CONVERSION FOCUSED</h3>
-        <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 400;">Efficient workflows and proven processes ensure timely delivery without compromising on quality or creative excellence.</p>
+        <p class="text-gray-300 text-sm sm:text-base" style="font-family: 'Inter', sans-serif; font-weight: 400;">Designs optimized to guide users, boost engagement, and deliver measurable results across every touchpoint.</p>
+       </div>
+      </div>
+     </div>
+    </section>
 
-      </section><!-- Latest Insights Section -->
-  <section id="blog" class="py-20 px-6">
-   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 sm:mb-8 text-center fade-in-up px-4" style="font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 0.08em;">LATEST <span class="text-gradient">INSIGHTS</span></h2>
-    <p class="text-base sm:text-lg text-gray-300 text-center mb-12 sm:mb-16 max-w-3xl mx-auto fade-in-up px-4" style="font-family: 'Inter', sans-serif; animation-delay: 0.2s;">Thoughts on design, creativity, and the evolving landscape of visual communication.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 px-4"><!-- Blog Post 1 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="1" style="animation-delay: 0s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ✦
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">DESIGN</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">5 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">The Future of Brand Identity in AI Era</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">Exploring how artificial intelligence is reshaping the way we approach brand identity design and what it means for creative professionals...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article><!-- Blog Post 2 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="2" style="animation-delay: 0.2s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ◆
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">STRATEGY</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">4 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">Minimalism vs. Maximalism in 2024</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">A deep dive into the ongoing design debate and how to choose the right approach for your brand's unique story and audience...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article><!-- Blog Post 3 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="3" style="animation-delay: 0.4s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ⬢
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">PROCESS</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">6 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">My Creative Process: From Brief to Launch</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">An inside look at my systematic approach to transforming client visions into compelling visual experiences that drive results...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 px-4"><!-- Blog Post 4 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="4" style="animation-delay: 0s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ◉
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">TRENDS</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">5 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">Color Psychology in Modern Branding</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">Understanding how color choices influence consumer behavior and emotional connections with your brand in today's market...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article><!-- Blog Post 5 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="5" style="animation-delay: 0.2s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ▲
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">TUTORIAL</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">7 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">Typography That Converts: A Practical Guide</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">Master the art of selecting and pairing fonts that enhance readability and drive user engagement across all platforms...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article><!-- Blog Post 6 -->
-     <article class="bg-black bg-opacity-80 rounded-xl sm:rounded-2xl overflow-hidden border border-gray-700 card-hover fade-in elementPulse blog-card" data-post-id="6" style="animation-delay: 0.4s;">
-      <div class="h-40 sm:h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-       <div class="text-4xl sm:text-5xl md:text-6xl">
-        ⬡
-       </div>
-      </div>
-      <div class="p-4 sm:p-6">
-       <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap"><span class="text-xs px-2 sm:px-3 py-1 bg-white bg-opacity-10 rounded-full" style="font-family: 'JetBrains Mono', monospace;">INSIGHTS</span> <span class="text-xs text-gray-400" style="font-family: 'JetBrains Mono', monospace;">6 MIN READ</span>
-       </div>
-       <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style="font-family: 'Space Grotesk', sans-serif;">Building Brands That Stand the Test of Time</h3>
-       <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3" style="font-family: 'Inter', sans-serif; line-height: 1.6;">Exploring timeless design principles and strategic thinking that create lasting brand identities beyond fleeting trends...</p><button class="text-white hover:text-gray-300 transition-colors text-xs sm:text-sm font-semibold inline-flex items-center read-more-btn" style="font-family: 'Space Grotesk', sans-serif;"> READ MORE → </button>
-      </div>
-     </article>
-    </div>
-   </div>
-  </section><!-- Footer -->
+   
+
+
+  
+  <!-- Footer -->
   <footer class="py-8 sm:py-10 md:py-12 px-4 sm:px-6 border-t border-gray-800">
    <div class="max-w-7xl mx-auto text-center">
     <div class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.1em;"><span class="text-gradient">HARIVARSHAN K A</span>
@@ -1407,7 +1401,7 @@
     <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base px-4" style="font-family: 'JetBrains Mono', monospace;">A person trying to do better</p>
     <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-gray-400 text-sm sm:text-base px-4" style="font-family: 'Inter', sans-serif;"><a href="https://www.behance.net/theharivarshan" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Behance">Behance</a> <a href="https://www.linkedin.com/in/theharivarshan/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="LinkedIn">LinkedIn</a>
     </div>
-    <p class="text-gray-600 text-xs sm:text-sm mt-6 sm:mt-8 px-4" style="font-family: 'JetBrains Mono', monospace;">© 2024 Harivarshan K A. All rights reserved.</p>
+    <p class="text-gray-600 text-xs sm:text-sm mt-6 sm:mt-8 px-4" style="font-family: 'JetBrains Mono', monospace;">© 2026 Harivarshan K A. All rights reserved.</p>
    </div>
   </footer>
   <script>
@@ -1604,6 +1598,54 @@
     
     startAutoSlide();
     
+    // Typewriter effect for hero headline
+    const texts = [
+      'HARIVARSHAN K A',
+      'GRAPHIC DESIGNER',
+      'SUSTAINABLE ENGINEER'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingDelay = 150;
+    const deletingDelay = 100;
+    const pauseDelay = 2000;
+    
+    function typeWriter() {
+      const typingElement = document.getElementById('typingText');
+      const currentText = texts[textIndex];
+      
+      if (!isDeleting) {
+        // Typing
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentText.length) {
+          // Finished typing, pause before deleting
+          isDeleting = true;
+          setTimeout(typeWriter, pauseDelay);
+          return;
+        }
+      } else {
+        // Deleting
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+          // Finished deleting, move to next text
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          setTimeout(typeWriter, 500);
+          return;
+        }
+      }
+      
+      setTimeout(typeWriter, isDeleting ? deletingDelay : typingDelay);
+    }
+    
+    // Start typewriter effect after page load
+    setTimeout(typeWriter, 500);
+    
     // Blog Slideshow functionality
     let currentBlogSlide = 0;
     const totalBlogSlides = 2;
@@ -1718,19 +1760,16 @@
           const target = document.querySelector(href);
           if (!target) return;
           
-          const scrollContainer = document.querySelector('.w-full.h-full.overflow-auto');
           const nav = document.querySelector('nav');
           const navHeight = nav ? nav.offsetHeight : 80;
           
           const targetPosition = target.offsetTop;
           const offsetPosition = targetPosition - navHeight - 20;
           
-          if (scrollContainer) {
-            scrollContainer.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
           
           const mobileMenu = document.getElementById('mobileMenu');
           if (mobileMenu && mobileMenu.classList.contains('active')) {
@@ -1742,8 +1781,6 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b90c448f6b479e0',t:'MTc2NzU5Mjk0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
 
 
 
